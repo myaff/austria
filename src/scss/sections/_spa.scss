@@ -1,0 +1,28 @@
+.section {
+  &--spa &__slider {
+    width: 848px;
+    @media #{$sm} {
+      width: 100%;
+      &-wrapper {
+        margin: 0 -1.5rem;
+      }
+    }
+  }
+  &--spa &__mark-wrapper {
+    margin-left: -8rem;
+    @media #{$sm} {
+      margin: 0;
+    }
+  }
+  &--spa &__slider + &__text {
+    max-width: 19.5rem;
+    @media #{$sm} {
+      max-width: 100%;
+    }
+  }
+  &--spa &__mark {
+    .mark__line {
+      height: 300px;
+    }
+  }
+}

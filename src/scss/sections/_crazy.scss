@@ -1,0 +1,94 @@
+.section {
+  &--crazy {
+    background: $color--base;
+    z-index: 1;
+  }
+  &--crazy &__heading {
+    z-index: 2;
+  }
+  &--crazy &__slider {
+    width: 650px;
+    right: 0;
+    left: -3.5rem;
+    padding-bottom: 270px;
+    z-index: 1;
+    
+    &::before {
+      content: '';
+      display: block;
+      @include absolute(bottom 0 right 0);
+      @include size(100vw, 270px);
+      background: $color--primary;
+    }
+    
+    @media #{$sm} {
+      width: 100%;
+      left: 0;
+      right: 0;
+      padding-bottom: 170px;
+      
+      &::before {
+        width: 100%;
+        left: 0;
+        height: 282px;
+      }
+      
+      &-wrapper {
+        margin: -290px -1.5rem 0;
+        z-index: 0;
+      }
+    }
+    
+    .owl-nav {
+      margin-left: -1rem;
+      @media #{$sm} {
+        margin: 0;
+      }
+    }
+  }
+  &--crazy &__content {
+    z-index: 2;
+    margin-left: -7.5rem;
+  }
+  &--crazy .text-block--light {
+    margin: {
+      left: 1.4rem;
+      right: -1.5rem;
+    }
+    @media #{$sm} {
+      margin: 0;
+    }
+    
+    &::before {
+      content: '';
+      display: block;
+      @include absolute(bottom -0.5rem left 0);
+      @include size(100%, 1rem);
+      background: $color--alt;
+    }
+  }
+  &--crazy &__text {
+    max-width: 63.61%;
+    @media #{$sm} {
+      max-width: initial;
+      margin: -1px -1.5rem;
+    }
+  }
+  &--crazy &__mark-wrapper {
+    @include absolute(bottom 88px left 0);
+    width: 100%;
+    z-index: 3;
+    .mark--inline {
+      justify-content: center;
+    }
+    @media #{$sm} {
+      bottom: 80px;
+    }
+  }
+  
+  &--crazy &__line {
+    @include absolute(top 2.5rem left 0);
+    @include size(3px, 300px);
+    background: $color--primary;
+  }
+}

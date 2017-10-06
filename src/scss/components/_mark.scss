@@ -1,0 +1,43 @@
+.mark {
+  &__icon {
+    @include size(90px, 115px);
+    .icon {
+      @include size(100%);
+    }
+  }
+  &__line {
+    background: $color--primary;
+    @include size(3px, 475px);
+    @include absolute(top -500px left 90px);
+  }
+  
+  &__text {
+    color: inherit;
+  }
+  
+  &--alt {
+    color: $color--alt;
+  }
+  
+  &--center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  &--center &__icon,
+  &--center &__text {
+    width: 100%;
+  }
+  &--inline {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &--inline &__line {
+    left: 106px;
+    top: auto;
+    bottom: 0;
+  }
+}

@@ -1,0 +1,128 @@
+.section {
+  &--start &__top {
+    background: url('../img/start/start-bg.jpg') top center no-repeat;
+    
+    @media #{$sm} {
+      background: url('../img/start/start-bg-top_m.jpg') top center no-repeat;
+      background-size: cover;
+    }
+  }
+  &--start &__bottom {
+    padding: 375px 0 670px;
+    margin: -300px 0 -550px;
+    
+    @media #{$sm} {
+      background: url('../img/start/start-bg-bottom_m.jpg') top center no-repeat;
+      background-size: cover;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  &--start &__bottom &__bg {
+    @include absolute(top 0 left 0);
+    @include size(100%);
+    background: url('../img/start/start-bg-man.jpg') top -300px center no-repeat;
+  }
+  &--start &__img-wrapper {
+    z-index: 3;
+    margin-right: -15px;
+    &::before {
+      content: '';
+      display: block;
+      @include absolute(bottom 0 right 0);
+      @include size(855px, 300px);
+      background: $color--primary;
+      z-index: 1;
+    }
+    &::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    
+    @media #{$sm} {
+      margin: 0;
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+  &--start &__img {
+    z-index: 2;
+    margin-top: -13px;
+  }
+  &--start &__heading {
+    margin-left: -6px;
+    .tp-heading--huge {
+      margin-left: -10px;
+      @media #{$sm} {
+        font-size: 257px;
+      }
+    }
+    .tp-heading--large {
+      line-height: 1;
+      @media #{$sm} {
+        font-size: 60px;
+      }
+    }
+  }
+  &--start &__arrow {
+    @include size(4rem);
+    @media #{$min-animation} {
+      animation: shake 0.5s infinite alternate;
+    }
+    .icon {
+      @include size(4rem);
+      margin: {
+        top: 10px;
+        left: -20px;
+      }
+      @media #{$sm} {
+        margin: 0;
+      }
+    }
+  }
+  &--start &__top &__line {
+    @include absolute(top 0 left 2rem);
+    @include size(3px, 515px);
+    background: $color--primary;
+    z-index: 4;
+    @media #{$sm} {
+      position: relative;
+      @include size(386px, 76px);
+      left: 0;
+      
+      &::before {
+        content: '';
+        display: block;
+        @include size(3px, 286px);
+        @include absolute(top 0 left 50%);
+        background: $color--primary;
+        margin-left: -1.5px;
+      }
+    }
+  }
+  &--start &__bottom &__line {
+    @include absolute(top 0 left 51%);
+    @include size(3px, 500px);
+    background: $color--primary;
+    
+    @media #{$sm} {
+      top: 420px;
+      left: 50%;
+      margin-left: -1.5px;
+      height: 215px;
+      z-index: 2;
+    }
+  }
+}
+
+@keyframes shake {
+  from {
+    transform: translateY(-10%);
+  },
+  to {
+    transform: translateY(10%);
+  }
+}

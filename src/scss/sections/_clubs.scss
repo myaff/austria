@@ -1,0 +1,67 @@
+.section {
+  &--clubs {
+    background: url('../img/clubs/clubs-bg.jpg') top center no-repeat;
+    @media #{$sm} {
+      background: url('../img/clubs/clubs-bg_m.jpg') bottom 580px center no-repeat;
+      background-size: contain;
+    }
+  }
+  &--clubs &__heading,
+  &--clubs &__text-wrapper {
+    z-index: 2;
+  }
+  &--clubs &__img-wrapper {
+    margin: {
+      top: -250px;
+      bottom: -290px;
+      left: -50px;
+    }
+    z-index: 1;
+    @media #{$sm} {
+      margin: 0 -1.5rem -230px;
+      z-index: 0;
+    }
+  }
+  &--clubs &__slider {
+    padding-bottom: 4.75rem;
+    
+    &::before {
+      content: '';
+      display: block;
+      @include absolute(bottom 0 left 7.25rem right 7.25rem);
+      @include size(auto, 4.75rem);
+      background: $color--primary;
+      @media #{$sm} {
+        display: none;
+      }
+    }
+    
+    .owl-nav {
+      bottom: -3.5rem;
+      @media #{$sm} {
+        padding: 0;
+        bottom: 0;
+        margin: 0 7.25rem;
+        background: $color--primary;
+      }
+    }
+  }
+  &--clubs &__mark-wrapper {
+    margin-left: -4.25rem;
+    @media #{$sm} {
+      @include absolute(top 1rem right 2rem);
+      margin: 0;
+    }
+  }
+  &--clubs &__mark {
+    .mark__line {
+      position: relative;
+      top: 0;
+      height: 275px;
+      margin-bottom: 25px;
+      @media #{$sm} {
+        left: auto;
+      }
+    }
+  }
+}

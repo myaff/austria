@@ -1,0 +1,87 @@
+.section {
+  &--food {
+    background: url('../img/food/food-bg.jpg') bottom center no-repeat;
+    margin-top: -2.5rem;
+    z-index: 1;
+    @media #{$sm} {
+      margin: 0;
+      background: url('../img/food/food-bg_m.jpg') top center no-repeat;
+      background-size: contain;
+    }
+  }
+  &--food .col-3 {
+    flex-basis: 30.64%;
+    max-width: 30.64%;
+    margin-right: -0.5rem;
+    z-index: 2;
+  }
+  &--food .col-4 {
+    flex-basis: 36.27%;
+    max-width: 36.27%;
+  }
+  &--food &__text {
+    z-index: 2;
+    
+    .text-block--light {
+      margin: {
+        left: 0.5rem;
+        right: -0.5rem;
+      }
+    }
+  }
+  &--food &__slider-wrapper {
+    margin-left: -6.5rem;
+    @media #{$sm} {
+      margin: 0;
+    }
+  }
+  &--food &__mark {
+    @include absolute(top 74px left auto right 0);
+    z-index: 3;
+    @media #{$sm} {
+      top: 1.5rem;
+      left: 0;
+    }
+  }
+  &--food &__slider {
+    padding: 274px 0 124px;
+    
+    @media #{$sm} {
+      padding: 260px 0 0;
+    }
+    
+    &::before {
+      content: '';
+      display: block;
+      @include absolute(bottom 0 left 0);
+      @include size(100%);
+      background: $color--primary;
+      z-index: 1;
+      
+      @media #{$sm} {
+        width: auto;
+        left: 4.75rem;
+        right: 4.75rem;
+      }
+    }
+    
+    .owl-carousel {
+      z-index: 3;
+    }
+    .owl-stage-outer {
+      margin: {
+        left: 119px;
+        right: -8.5rem;
+      }
+      @media #{$sm} {
+        margin: 0;
+      }
+    }
+    .owl-nav {
+      bottom: -5.5rem;
+      @media #{$sm} {
+        bottom: 0;
+      }
+    }
+  }
+}

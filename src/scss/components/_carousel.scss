@@ -1,0 +1,79 @@
+@import 'owl.carousel/core';
+@import 'owl.carousel/animate';
+//@import 'owl.carousel/autoheight';
+//@import 'owl.carousel/lazyload';
+//@import 'owl.carousel/video';
+
+.owl-item {
+  img {
+    @media #{$sm} {
+      width: 100%;
+    }
+  }
+}
+.owl-nav {
+  @include absolute(bottom -4.5rem);
+  display: flex;
+  justify-content: flex-start;
+  left: 0;
+  
+  @media #{$sm} {
+    position: relative;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1.25rem;
+  }
+  
+  .owl-nav--center & {
+    left: 50%;
+    margin-left: -4.5rem;
+    
+    @media #{$sm} {
+      justify-content: center;
+      left: 0;
+      margin: 0;
+    }
+  }
+  /*
+  @media #{$sm} {
+    top: 75vw;
+    width: 96.88vw;
+    height: 12.5vw;
+    margin-left: -48.44vw;
+  }*/
+}
+.owl-prev,
+.owl-next {
+  @include size(4.5rem, 2.5rem);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: opacity 0.2s;
+  
+  @media #{$sm} {
+    @include size(4.5rem);
+    padding: 1rem;
+    background-clip: content-box;
+  }
+  
+  &.disabled {
+    opacity: 0.15;
+    cursor: default!important;
+  }
+}
+@each $dir in (prev, next) {
+  .owl-nav--dark .owl-#{$dir} {
+    &, &::after {
+      background-image: url('../img/arrow-#{$dir}--dark.svg');
+      background-size: contain;
+    }
+  }
+  .owl-nav--light .owl-#{$dir} {
+    &, &::after {
+      background-image: url('../img/arrow-#{$dir}--light.svg');
+      background-size: contain;
+    }
+  }
+}

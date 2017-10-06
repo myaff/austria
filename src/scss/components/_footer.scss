@@ -1,0 +1,11 @@
+.footer {
+  background: $footer-bg;
+  color: $footer-color;
+  border-bottom: 2px solid $color--primary;
+  z-index: 2;
+  width: 100vw;
+  min-width: 80rem;
+  @media #{$sm} {
+    min-width: initial;
+  }
+}

@@ -1,0 +1,36 @@
+.header {
+  @include fixed(top 0 left 0);
+  @include size(100%, $header-height);
+  padding: 2px 2rem 3px;
+  z-index: $z-index--header;
+  
+  background: $header-bg;
+  color: $header-color;
+    
+  @media #{$sm} {
+    padding: 2px 1.5rem 3px;
+    @include size(100%, $header-height--mobile);
+  }
+  
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+    &.logo--vs {
+      margin-left: 3rem;
+      width: 225px;
+      
+      @media #{$sm} {
+        width: 190px;
+        margin-left: 0;
+      }
+      
+      .logo__img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
